@@ -1,0 +1,5 @@
+__package git
+__package gvim
+__package zsh
+__package fish
+__package the_silver_searcher

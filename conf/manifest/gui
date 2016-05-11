@@ -1,0 +1,30 @@
+# xorg
+__package xorg-server
+# TODO: Install driver depending on the machine
+__package xf86-video-ati
+
+# lightdm
+__package lightdm
+__package lightdm-gtk-greeter
+
+# i3
+__package i3-wm
+__package i3lock
+__package i3status
+
+# i3 utilities
+__package dmenu
+__package xautolock
+__package xorg-xbacklight
+__package imagemagick
+
+# fonts
+__package ttf-inconsolata
+__package ttf-symbola
+
+# terminal emulator
+# TODO: find an alternative terminal emulator?
+__package termite
+
+# browser
+__package chromium

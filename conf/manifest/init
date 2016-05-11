@@ -1,0 +1,7 @@
+# Add timestamped marker on host
+__cdistmarker
+
+. $__manifest/base
+. $__manifest/user
+. $__manifest/gui
+. $__manifest/coding
