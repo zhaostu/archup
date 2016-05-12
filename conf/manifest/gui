@@ -3,6 +3,10 @@ __package xorg-server
 # TODO: Install driver depending on the machine
 __package xf86-video-ati
 
+# appearance
+__package archlinux-wallpaper
+__package numix-themes
+
 # lightdm
 __package lightdm
 __package lightdm-gtk-greeter
