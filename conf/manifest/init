@@ -5,3 +5,4 @@ __cdistmarker
 . $__manifest/user
 . $__manifest/gui
 . $__manifest/coding
+. $__manifest/fonts

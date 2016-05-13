@@ -22,10 +22,6 @@ __package xautolock
 __package xorg-xbacklight
 __package imagemagick
 
-# fonts
-__package ttf-inconsolata
-__package ttf-symbola
-
 # terminal emulator
 # TODO: find an alternative terminal emulator?
 __package termite

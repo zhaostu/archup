@@ -1,0 +1,17 @@
+__package ttf-freefont
+__package ttf-liberation
+__package ttf-dejavu
+__package ttf-droid
+
+# monospace
+__package ttf-inconsolata
+
+# chinese fonts
+__package wqy-bitmapfont
+__package wqy-microhei
+__package wqy-microhei-lite
+__package wqy-zenhei
+__package opendesktop-fonts
+
+# other
+__package ttf-symbola
