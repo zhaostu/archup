@@ -6,10 +6,14 @@ __package xf86-video-ati
 # appearance
 __package archlinux-wallpaper
 __package numix-themes
+__package flattr-icon-theme
 
 # lightdm
 __package lightdm
 __package lightdm-gtk-greeter
+require="__package/lightdm-gtk-greeter" \
+    __file /etc/lightdm/lightdm-gtk-greeter.conf \
+        --source "$__manifest/files/lightdm-gtk-greeter.conf" --mode 0644
 
 # i3
 __package i3-wm
