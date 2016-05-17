@@ -2,6 +2,7 @@ __package ttf-freefont
 __package ttf-liberation
 __package ttf-dejavu
 __package ttf-droid
+__package ttf-ubuntu-font-family
 
 # monospace
 __package ttf-inconsolata
