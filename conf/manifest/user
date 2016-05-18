@@ -1,1 +1,14 @@
-__user stu --create-home
+__package accountsservice
+__user stu --create-home --password \
+    '$6$qtYUHAJw$PWufE9Z5sPxzfe1UvaYU5YVg89Ijsst1VHgYj0z6UOrBIZvPt9sd.2V8QK44cmT8CfPMfQIJvBT8jH0g8LcFC0'
+
+require="__user/stu" \
+    __user_groups stu-wheel --user stu --group wheel
+
+require="__package/accountsservice" \
+    __file /var/lib/AccountsService/users/stu \
+        --source "$__manifest/files/stu-user.conf" --mode 0644
+
+require="__package/accountsservice" \
+    __file /var/lib/AccountsService/icons/stu \
+        --source "$__manifest/files/stu-icon.png" --mode 0644
