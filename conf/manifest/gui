@@ -32,3 +32,6 @@ __package termite
 
 # browser
 __package chromium
+
+# file manager
+__package spacefm
