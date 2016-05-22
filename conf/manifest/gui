@@ -35,3 +35,6 @@ __package chromium
 
 # file manager
 __package spacefm
+
+# media player
+__package vlc
