@@ -4,3 +4,6 @@ __package udevil
 # file systems
 __package ntfs-3g
 __package exfat-utils
+
+# gnome keyring
+__package gnome-keyring
