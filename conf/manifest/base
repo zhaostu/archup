@@ -1,5 +1,15 @@
+machine_type=$(cat "$__global/explorer/machine_type2")
+
 __package git
 __package gvim
 __package zsh
 __package fish
 __package the_silver_searcher
+
+# Install virtualbox guest addition if
+case "$machine_type" in
+    virtual_by_virtualbox)
+        __package virtualbox-guest-modules-arch
+        __package virtualbox-guest-utils
+    ;;
+esac
