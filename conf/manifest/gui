@@ -15,6 +15,9 @@ require="__package/lightdm-gtk-greeter" \
     __file /etc/lightdm/lightdm-gtk-greeter.conf \
         --source "$__manifest/files/lightdm-gtk-greeter.conf" --mode 0644
 
+require="__package/lightdm" \
+    __start_on_boot lightdm.service
+
 # i3
 __package i3-wm
 __package i3lock
