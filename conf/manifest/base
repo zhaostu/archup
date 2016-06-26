@@ -18,7 +18,3 @@ esac
 __package dash
 require="__package/dash" \
     __link /bin/sh --source dash --type symbolic
-require="__package/dash" \
-    __pacman_conf options_NoUpgrade --section options --key NoUpgrade --value usr/bin/sh
-require="__package/dash" \
-    __pacman_conf options_NoExtract --section options --key NoExtract --value usr/bin/sh
