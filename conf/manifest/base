@@ -21,3 +21,7 @@ esac
 __package dash
 require="__package/dash" \
     __link /bin/sh --source dash --type symbolic
+
+# Allow users in group "wheel" for sudo
+__file /etc/sudoers.d/wheel \
+    --source "$__manifest/files/sudoers.wheel" --mode 0440
