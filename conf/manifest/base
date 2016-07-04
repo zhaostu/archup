@@ -10,7 +10,10 @@ __package the_silver_searcher
 case "$machine_type" in
     virtual_by_virtualbox)
         __package virtualbox-guest-modules-arch
-        __package virtualbox-guest-utils
+        require="virtualbox-guest-modules-arch" \
+            __package virtualbox-guest-utils
+        require="virtualbox-guest-utils" \
+            __start_on_boot vboxservice.service
     ;;
 esac
 
