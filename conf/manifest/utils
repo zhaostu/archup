@@ -1,3 +1,5 @@
+machine_type=$(cat "$__global/explorer/machine_type2")
+
 # auto mounting removable media
 __package udevil
 
@@ -7,3 +9,14 @@ __package exfat-utils
 
 # gnome keyring
 __package gnome-keyring
+
+# bluetooth
+case "$machine_type" in
+    physical)
+        __package bluez
+        __package bluez-utils
+        __package pulseaudio-bluetooth
+        require="__package/bluez" \
+            __start_on_boot bluetooth.service
+    ;;
+esac
