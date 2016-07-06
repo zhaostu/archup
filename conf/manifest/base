@@ -1,4 +1,5 @@
 machine_type=$(cat "$__global/explorer/machine_type2")
+interfaces=$(cat "$__global/explorer/interfaces")
 
 __package git
 __package gvim
@@ -6,7 +7,7 @@ __package zsh
 __package fish
 __package the_silver_searcher
 
-# Install virtualbox guest addition if
+# Install virtualbox guest addition if applicable
 case "$machine_type" in
     virtual_by_virtualbox)
         __package virtualbox-guest-modules-arch
@@ -16,6 +17,25 @@ case "$machine_type" in
             __start_on_boot vboxservice.service
     ;;
 esac
+
+# Automatic networking profile switching
+case "$machine_type" in
+    physical)
+        for interface in $interfaces; do
+            case "$interface" in
+                en*)
+                    __package ifplugd
+                    __start_on_boot netctl-ifplugd@$interface.service
+                    ;;
+                wl*)
+                    __package wpa_actiond
+                    __start_on_boot netctl-auto@$interface.service
+                    ;;
+            esac
+        done
+    ;;
+esac
+
 
 # Use dash as shell
 __package dash
