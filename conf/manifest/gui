@@ -1,7 +1,10 @@
 # xorg
 __package xorg-server
-# TODO: Install driver depending on the machine
-__package xf86-video-ati
+# TODO: Install video driver depending on the machine
+# __package xf86-video-ati
+
+# touchpad
+__package xf86-input-libinput
 
 # appearance
 __package archlinux-wallpaper

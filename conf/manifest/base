@@ -36,7 +36,6 @@ case "$machine_type" in
     ;;
 esac
 
-
 # Use dash as shell
 __package dash
 require="__package/dash" \
