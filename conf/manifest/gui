@@ -1,10 +1,10 @@
 # xorg
-__package xorg-server
+__package xf86-input-libinput
+require="__package/xf86-input-libinput" \
+    __package xorg-server
+
 # TODO: Install video driver depending on the machine
 # __package xf86-video-ati
-
-# touchpad
-__package xf86-input-libinput
 
 # appearance
 __package archlinux-wallpaper
