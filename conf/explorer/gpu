@@ -1,0 +1,15 @@
+#!/bin/sh
+if [ -x $(which lspci) ]; then
+    desc=$(lspci -nn | grep -e VGA -e 3D)
+    if echo $desc | grep -qi "nvidia"; then
+        echo "nvidia"
+        exit
+    elif echo $desc | grep -qi "amd/ati"; then
+        echo "ati"
+        exit
+    elif echo $desc | grep -qi "intel"; then
+        echo "intel"
+        exit
+    fi
+fi
+echo "unknown"

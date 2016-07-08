@@ -1,5 +1,6 @@
 machine_type=$(cat "$__global/explorer/machine_type2")
 interfaces=$(cat "$__global/explorer/interfaces")
+gpu=$(cat "$__global/explorer/gpu")
 
 __package git
 __package gvim
@@ -34,6 +35,19 @@ case "$machine_type" in
             esac
         done
     ;;
+esac
+
+# Install video driver
+case "$gpu" in
+    nvidia)
+        __package xf86-video-nouveau
+        ;;
+    ati)
+        __package xf86-video-ati
+        ;;
+    intel)
+        __package xf86-video-intel
+        ;;
 esac
 
 # Use dash as shell
