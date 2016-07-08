@@ -1,54 +1,8 @@
-machine_type=$(cat "$__global/explorer/machine_type2")
-interfaces=$(cat "$__global/explorer/interfaces")
-gpu=$(cat "$__global/explorer/gpu")
-
 __package git
 __package gvim
 __package zsh
 __package fish
 __package the_silver_searcher
-
-# Install virtualbox guest addition if applicable
-case "$machine_type" in
-    virtual_by_virtualbox)
-        __package virtualbox-guest-modules-arch
-        require="__package/virtualbox-guest-modules-arch" \
-            __package virtualbox-guest-utils
-        require="__package/virtualbox-guest-utils" \
-            __start_on_boot vboxservice.service
-    ;;
-esac
-
-# Automatic networking profile switching
-case "$machine_type" in
-    physical)
-        for interface in $interfaces; do
-            case "$interface" in
-                en*)
-                    __package ifplugd
-                    __start_on_boot netctl-ifplugd@$interface.service
-                    ;;
-                wl*)
-                    __package wpa_actiond
-                    __start_on_boot netctl-auto@$interface.service
-                    ;;
-            esac
-        done
-    ;;
-esac
-
-# Install video driver
-case "$gpu" in
-    nvidia)
-        __package xf86-video-nouveau
-        ;;
-    ati)
-        __package xf86-video-ati
-        ;;
-    intel)
-        __package xf86-video-intel
-        ;;
-esac
 
 # Use dash as shell
 __package dash

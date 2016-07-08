@@ -1,4 +1,4 @@
-machine_type=$(cat "$__global/explorer/machine_type2")
+machine_type=$(cat "$__global/explorer/machine_type")
 
 # auto mounting removable media
 __package udevil

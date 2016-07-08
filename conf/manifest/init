@@ -2,6 +2,8 @@
 __cdistmarker
 
 . $__manifest/base
+. $__manifest/drivers
+. $__manifest/networking
 . $__manifest/user
 . $__manifest/gui
 . $__manifest/audio

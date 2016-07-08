@@ -1,0 +1,27 @@
+machine_type=$(cat "$__global/explorer/machine_type")
+gpu=$(cat "$__global/explorer/gpu")
+
+# Install virtualbox guest addition if applicable
+case "$machine_type" in
+    virtual_by_virtualbox)
+        __package virtualbox-guest-modules-arch
+        require="__package/virtualbox-guest-modules-arch" \
+            __package virtualbox-guest-utils
+        require="__package/virtualbox-guest-utils" \
+            __start_on_boot vboxservice.service
+    ;;
+esac
+
+# Install video driver
+case "$gpu" in
+    nvidia)
+        __package xf86-video-nouveau
+        ;;
+    ati)
+        __package xf86-video-ati
+        ;;
+    intel)
+        __package xf86-video-intel
+        ;;
+esac
+

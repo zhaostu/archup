@@ -1,0 +1,21 @@
+machine_type=$(cat "$__global/explorer/machine_type")
+interfaces=$(cat "$__global/explorer/interfaces")
+
+# Automatic networking profile switching
+case "$machine_type" in
+    physical)
+        for interface in $interfaces; do
+            case "$interface" in
+                en*)
+                    __package ifplugd
+                    __start_on_boot netctl-ifplugd@$interface.service
+                    ;;
+                wl*)
+                    __package wpa_actiond
+                    __start_on_boot netctl-auto@$interface.service
+                    ;;
+            esac
+        done
+    ;;
+esac
+
