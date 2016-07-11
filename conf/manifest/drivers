@@ -9,7 +9,7 @@ case "$machine_type" in
             __package virtualbox-guest-utils
         require="__package/virtualbox-guest-utils" \
             __start_on_boot vboxservice.service
-    ;;
+        ;;
 esac
 
 # Install video driver

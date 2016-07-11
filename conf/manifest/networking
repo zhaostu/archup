@@ -16,6 +16,6 @@ case "$machine_type" in
                     ;;
             esac
         done
-    ;;
+        ;;
 esac
 

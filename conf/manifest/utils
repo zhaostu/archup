@@ -18,5 +18,5 @@ case "$machine_type" in
         __package pulseaudio-bluetooth
         require="__package/bluez" \
             __start_on_boot bluetooth.service
-    ;;
+        ;;
 esac
