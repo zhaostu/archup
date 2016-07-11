@@ -1,0 +1,5 @@
+if [ -f "/sys/class/dmi/id/sys_vendor" ]; then
+    cat /sys/class/dmi/id/sys_vendor
+else
+    echo "unknown"
+fi

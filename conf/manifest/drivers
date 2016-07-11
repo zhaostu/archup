@@ -1,4 +1,5 @@
 machine_type=$(cat "$__global/explorer/machine_type")
+vendor=$(cat "$__global/explorer/vendor")
 gpu=$(cat "$__global/explorer/gpu")
 
 # Install virtualbox guest addition if applicable
@@ -11,6 +12,11 @@ case "$machine_type" in
             __start_on_boot vboxservice.service
         ;;
 esac
+
+# Checkout system76 driver AUR package if applicable
+if echo $vendor | grep -qi "system76"; then
+    __aur system76-driver
+fi
 
 # Install video driver
 case "$gpu" in
