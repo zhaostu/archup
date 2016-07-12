@@ -1,5 +1,10 @@
 machine_type=$(cat "$__global/explorer/machine_type")
 
+# Use dash as shell
+__package dash
+require="__package/dash" \
+    __link /bin/sh --source dash --type symbolic
+
 # auto mounting removable media
 __package udevil
 
@@ -9,6 +14,9 @@ __package exfat-utils
 
 # gnome keyring
 __package gnome-keyring
+
+# audio
+__package pulseaudio
 
 # bluetooth
 case "$machine_type" in

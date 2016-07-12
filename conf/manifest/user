@@ -12,3 +12,7 @@ require="__package/accountsservice" \
 require="__package/accountsservice" \
     __file /var/lib/AccountsService/icons/stu \
         --source "$__manifest/files/stu-icon.png" --mode 0644
+
+# Allow users in group "wheel" for sudo
+__file /etc/sudoers.d/wheel \
+    --source "$__manifest/files/sudoers.wheel" --mode 0440

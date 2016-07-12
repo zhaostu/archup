@@ -1,3 +1,9 @@
 # python
 __package python
 __package python2
+
+# go
+__package go
+
+# version control
+__package git

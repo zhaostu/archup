@@ -1,0 +1,21 @@
+# shell
+__package zsh
+__package fish
+
+# terminal emulator
+__package termite
+
+# browser
+__package chromium
+
+# file manager
+__package spacefm
+
+# media player
+__package vlc
+
+# text editor
+__package gvim
+
+# file content searcher
+__package the_silver_searcher

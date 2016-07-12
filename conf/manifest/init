@@ -3,12 +3,11 @@ __cdistmarker
 # Update pacman index
 __package_update_index
 
-. $__manifest/base
+. $__manifest/apps
+. $__manifest/coding
 . $__manifest/drivers
+. $__manifest/fonts
+. $__manifest/gui
+. $__manifest/misc
 . $__manifest/networking
 . $__manifest/user
-. $__manifest/gui
-. $__manifest/audio
-. $__manifest/coding
-. $__manifest/fonts
-. $__manifest/utils
