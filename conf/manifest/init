@@ -1,5 +1,7 @@
 # Add timestamped marker on host
 __cdistmarker
+# Update pacman index
+__package_update_index
 
 . $__manifest/base
 . $__manifest/drivers
