@@ -1,6 +1,6 @@
 machine_type=$(cat "$__global/explorer/machine_type")
 
-# Use dash as shell
+# use dash as shell
 __package dash
 require="__package/dash" \
     __link /bin/sh --source dash --type symbolic

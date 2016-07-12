@@ -1,6 +1,6 @@
-# Add timestamped marker on host
+# add timestamped marker on host
 __cdistmarker
-# Update pacman index
+# update package index
 __package_update_index
 
 . $__manifest/apps

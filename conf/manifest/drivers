@@ -2,7 +2,7 @@ machine_type=$(cat "$__global/explorer/machine_type")
 vendor=$(cat "$__global/explorer/vendor")
 gpu=$(cat "$__global/explorer/gpu")
 
-# Install virtualbox guest addition if applicable
+# install virtualbox guest addition if applicable
 case "$machine_type" in
     virtual_by_virtualbox)
         __package virtualbox-guest-modules-arch
@@ -13,12 +13,12 @@ case "$machine_type" in
         ;;
 esac
 
-# Checkout system76 driver AUR package if applicable
+# checkout system76 driver AUR package if applicable
 if echo $vendor | grep -qi "system76"; then
     __aur system76-driver
 fi
 
-# Install video driver
+# install video driver
 case "$gpu" in
     nvidia)
         __package xf86-video-nouveau

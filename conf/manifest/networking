@@ -1,7 +1,7 @@
 machine_type=$(cat "$__global/explorer/machine_type")
 interfaces=$(cat "$__global/explorer/interfaces")
 
-# Automatic networking profile switching
+# automatic networking profile switching
 case "$machine_type" in
     physical)
         for interface in $interfaces; do
