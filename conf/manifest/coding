@@ -5,5 +5,8 @@ __package python2
 # go
 __package go
 
+# rust
+__package rust
+
 # version control
 __package git
