@@ -10,3 +10,6 @@ __package rust
 
 # version control
 __package git
+
+# google cloud sdk
+__aur google-cloud-sdk

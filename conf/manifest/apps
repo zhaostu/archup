@@ -2,6 +2,9 @@
 __package zsh
 __package fish
 
+# unzip
+__package unzip
+
 # terminal emulator
 __package termite
 
@@ -17,5 +20,12 @@ __package vlc
 # text editor
 __package gvim
 
+# keepass
+__package keepass
+__package xdotool
+
 # file content searcher
 __package the_silver_searcher
+
+# dropbox
+__aur dropbox
