@@ -8,9 +8,6 @@ __package unzip
 # terminal emulator
 __package termite
 
-# browser
-__package chromium
-
 # file manager
 __package spacefm
 
@@ -24,8 +21,14 @@ __package gvim
 __package keepass
 __package xdotool
 
+# workrave
+__package workrave 
+
 # file content searcher
 __package the_silver_searcher
 
 # dropbox
 __aur dropbox
+
+# browser
+__aur google-chrome
