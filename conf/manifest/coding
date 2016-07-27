@@ -8,6 +8,10 @@ __package go
 # rust
 __package rust
 
+# node
+__package nodejs
+__package npm
+
 # version control
 __package git
 
