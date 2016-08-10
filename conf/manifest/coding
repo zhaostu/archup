@@ -14,7 +14,7 @@ __package npm
 
 # version control
 __package git
-__aur git-fls
+__aur git-lfs
 
 # google cloud sdk
 __aur google-cloud-sdk
