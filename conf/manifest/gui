@@ -34,5 +34,6 @@ __package dex
 __package dmenu
 __package xautolock
 __package xorg-xbacklight
+__package xorg-xrandr
 __package imagemagick
 __package feh
