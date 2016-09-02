@@ -9,9 +9,14 @@ __package archlinux-wallpaper
 __package numix-themes
 __package flattr-icon-theme
 
-# GTK appearance
-__file /etc/gtk-2.0/gtkrc \
-    --source "$__manifest/files/gtk-2.0" --mode 0644
+# GTK
+__package gtk2
+__package gtk3
+require="__package/gtk2" \
+    __file /etc/gtk-2.0/gtkrc \
+        --source "$__manifest/files/gtk-2.0" --mode 0644
+
+require="__package/gtk3" \
 __file /etc/gtk-3.0/settings.ini \
     --source "$__manifest/files/gtk-3.0.ini" --mode 0644
 
