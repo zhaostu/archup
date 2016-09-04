@@ -10,12 +10,12 @@ require="__user/stu" \
 # user account service configuration
 require="__package/accountsservice" \
     __file /var/lib/AccountsService/users/stu \
-        --source "$__manifest/files/stu-user.conf" --mode 0644
+        --source "$__files/stu-user.conf" --mode 0644
 
 require="__package/accountsservice" \
     __file /var/lib/AccountsService/icons/stu \
-        --source "$__manifest/files/stu-icon.png" --mode 0644
+        --source "$__files/stu-icon.png" --mode 0644
 
 # allow users in group "wheel" for sudo
 __file /etc/sudoers.d/wheel \
-    --source "$__manifest/files/sudoers.wheel" --mode 0440
+    --source "$__files/sudoers.wheel" --mode 0440

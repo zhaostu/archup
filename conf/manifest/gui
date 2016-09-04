@@ -14,18 +14,18 @@ __package gtk2
 __package gtk3
 require="__package/gtk2" \
     __file /etc/gtk-2.0/gtkrc \
-        --source "$__manifest/files/gtk-2.0" --mode 0644
+        --source "$__files/gtk-2.0" --mode 0644
 
 require="__package/gtk3" \
-__file /etc/gtk-3.0/settings.ini \
-    --source "$__manifest/files/gtk-3.0.ini" --mode 0644
+    __file /etc/gtk-3.0/settings.ini \
+        --source "$__files/gtk-3.0.ini" --mode 0644
 
 # lightdm
 __package lightdm
 __package lightdm-gtk-greeter
 require="__package/lightdm-gtk-greeter" \
     __file /etc/lightdm/lightdm-gtk-greeter.conf \
-        --source "$__manifest/files/lightdm-gtk-greeter.conf" --mode 0644
+        --source "$__files/lightdm-gtk-greeter.conf" --mode 0644
 
 require="__package/lightdm" \
     __start_on_boot lightdm.service
