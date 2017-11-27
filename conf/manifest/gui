@@ -6,8 +6,8 @@ require="__package/xf86-input-libinput" \
 
 # appearance
 __package archlinux-wallpaper
-__package numix-themes
-__package flattr-icon-theme
+__package arc-gtk-theme
+__package arc-icon-theme
 
 # GTK
 __package gtk2
@@ -42,9 +42,13 @@ __package i3status
 
 # i3 utilities
 __package dex
-__package dmenu
+__package rofi
 __package xautolock
 __package xorg-xbacklight
 __package xorg-xrandr
+__package xorg-xrdb
 __package imagemagick
 __package feh
+
+# desktop notifications
+__package dunst

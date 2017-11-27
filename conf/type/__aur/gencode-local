@@ -1,0 +1,32 @@
+#!/bin/sh
+
+if [ -f "$__object/parameter/name" ]; then
+    name="$__object/parameter/name"
+else
+    name="$__object_id"
+fi
+source="$(cat "$__object/parameter/source")"
+filename="$(basename "$source")"
+pkg_version="$(cat "$__object/explorer/pkg_version")"
+
+# Check whether install is necessary (installed and version match)
+if [ -n "$pkg_version" ] &&
+        expr "$filename" : "${name}-${pkg_version}-.*" > /dev/null; then
+    exit 0
+fi
+
+machine=$(cat "$__global/explorer/machine")
+# Check packaged file's arch matches the target system
+if ! expr "$filename" : ".*-${machine}\.pkg\.tar\.xz$" > /dev/null &&
+        ! expr "$filename" : ".*-any\.pkg\.tar\.xz" > /dev/null; then
+    echo "Package architecture does not match target host. Skipping." >&2
+    exit 0
+fi
+
+# Upload package to temp location, install package and remove package
+tempfile_template="cdist.XXXXXXXXXX.${filename}"
+cat << DONE
+destination_upload="\$($__remote_exec $__target_host "mktemp $tempfile_template")"
+$__remote_copy "$source" "${__target_host}:\$destination_upload"
+$__remote_exec $__target_host "pacman --needed --noconfirm --noprogressbar -U \"\$destination_upload\"; rm \"\$destination_upload\""
+DONE

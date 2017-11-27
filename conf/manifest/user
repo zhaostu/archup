@@ -6,6 +6,8 @@ __user stu --create-home --password \
 
 require="__user/stu" \
     __user_groups stu-wheel --user stu --group wheel
+require="__user/stu" \
+    __user_groups stu-sys --user stu --group sys
 
 # user account service configuration
 require="__package/accountsservice" \

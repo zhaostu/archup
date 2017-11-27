@@ -1,5 +1,10 @@
 machine_type=$(cat "$__global/explorer/machine_type")
 
+# Kernel module blacklisting
+__file /etc/modprobe.d/blacklist.conf \
+    --source "$__files/modprobe-blacklist.conf" --mode 0644
+
+
 # use dash as shell
 __package dash
 require="__package/dash" \
@@ -27,4 +32,12 @@ case "$machine_type" in
         require="__package/bluez" \
             __start_on_boot bluetooth.service
         ;;
+esac
+
+# ntp
+case "$machine_type" in
+    physical)
+        __package ntp
+        require="__package/ntp" \
+            __start_on_boot ntpd.service
 esac

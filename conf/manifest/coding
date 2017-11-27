@@ -1,6 +1,10 @@
 # python
 __package python
 __package python2
+require="__package/python" \
+    __package python-pip
+require="__package/python2" \
+    __package python2-pip
 
 # go
 __package go
@@ -14,4 +18,3 @@ __package npm
 
 # version control
 __package git
-__aur git-lfs

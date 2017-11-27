@@ -2,8 +2,11 @@
 __package zsh
 __package fish
 
-# unzip
+# compress / decompress 
+__package zip
 __package unzip
+__package p7zip
+__package unrar
 
 # terminal emulator
 __package termite
@@ -17,9 +20,14 @@ __package vlc
 # text editor
 __package gvim
 
+# archive manager
+__package xarchiver
+
+# image viewer
+__package sxiv
+
 # keepass
-__package keepass
-__package xdotool
+__package keepassx2
 
 # workrave
 __package workrave 
@@ -27,8 +35,9 @@ __package workrave
 # file content searcher
 __package the_silver_searcher
 
-# dropbox
-__aur dropbox
+# offline documentation browser
+__package zeal
 
 # browser
-__aur google-chrome
+__package firefox
+__package chromium

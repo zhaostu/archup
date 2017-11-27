@@ -9,6 +9,15 @@ case "$machine_type" in
                 en*)
                     __package ifplugd
                     __start_on_boot netctl-ifplugd@$interface.service
+
+                    # Create a basic DHCP profile
+                    __file /etc/netctl/$interface-dhcp \
+                        --mode 0400 --source - << EOF
+Description='A basic dhcp ethernet connection'
+Interface=$interface
+Connection=ethernet
+IP=dhcp
+EOF
                     ;;
                 wl*)
                     __package wpa_actiond
@@ -18,4 +27,3 @@ case "$machine_type" in
         done
         ;;
 esac
-
