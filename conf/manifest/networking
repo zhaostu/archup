@@ -27,3 +27,8 @@ EOF
         done
         ;;
 esac
+
+# avahi
+__package avahi
+require="__package/avahi" \
+    __start_on_boot avahi-daemon.service
