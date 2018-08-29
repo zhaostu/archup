@@ -18,3 +18,4 @@ __package npm
 
 # version control
 __package git
+__package git-lfs

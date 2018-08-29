@@ -38,6 +38,9 @@ __package the_silver_searcher
 # offline documentation browser
 __package zeal
 
+# storage sync client
+__package rclone
+
 # browser
 __package firefox
 __package chromium
