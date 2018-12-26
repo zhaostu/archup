@@ -19,6 +19,7 @@ __package vlc
 
 # text editor
 __package gvim
+__package code
 
 # archive manager
 __package xarchiver
