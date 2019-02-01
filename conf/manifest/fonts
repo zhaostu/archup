@@ -2,10 +2,16 @@ __package ttf-freefont
 __package ttf-liberation
 __package ttf-dejavu
 __package ttf-droid
+__package ttf-roboto
+__package ttf-lato
 __package ttf-ubuntu-font-family
+__package noto-fonts
+__package adobe-source-sans-pro-fonts
+__package adobe-source-serif-pro-fonts
 
 # monospace
 __package ttf-inconsolata
+__package adobe-source-code-pro-fonts
 
 # chinese fonts
 __package wqy-bitmapfont
@@ -13,6 +19,8 @@ __package wqy-microhei
 __package wqy-microhei-lite
 __package wqy-zenhei
 __package opendesktop-fonts
+__package adobe-source-han-sans-otc-fonts
+__package adobe-source-han-serif-otc-fonts
 
-# other
-__package ttf-symbola
+# emoji
+__package noto-fonts-emoji
