@@ -1,4 +1,5 @@
 __package accountsservice
+__package sudo
 
 # user
 __user stu --create-home --password \
@@ -19,5 +20,6 @@ require="__package/accountsservice" \
         --source "$__files/stu-icon.png" --mode 0644
 
 # allow users in group "wheel" for sudo
-__file /etc/sudoers.d/wheel \
-    --source "$__files/sudoers.wheel" --mode 0440
+require="__package/sudo" \
+    __file /etc/sudoers.d/wheel \
+        --source "$__files/sudoers.wheel" --mode 0440
