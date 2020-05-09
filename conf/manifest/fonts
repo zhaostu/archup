@@ -5,12 +5,15 @@ __package ttf-droid
 __package ttf-roboto
 __package ttf-lato
 __package ttf-ubuntu-font-family
+__package ttf-fira-sans
 __package noto-fonts
 __package adobe-source-sans-pro-fonts
 __package adobe-source-serif-pro-fonts
 
 # monospace
 __package ttf-inconsolata
+__package ttf-cascadia-code
+__package ttf-fira-code
 __package adobe-source-code-pro-fonts
 
 # chinese fonts
