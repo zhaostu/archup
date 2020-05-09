@@ -15,10 +15,10 @@ esac
 # install video driver
 case "$gpu" in
     nvidia)
-        __package xf86-video-nouveau
+        __package nvidia
         ;;
-    ati)
-        __package xf86-video-ati
+    amd)
+        __package xf86-video-amdgpu
         ;;
     intel)
         __package xf86-video-intel
